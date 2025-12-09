@@ -193,10 +193,10 @@ python enhance.py
 If you use this code in your research, please cite:
 
 ```bibtex
-@thesis{alhabib2024medical,
+@thesis{Quni2025medical,
   title={Improving Medical Imaging With SSL Image Translation},
   author={Alhabib, Ahmed and Alseaf, Fahad and Albaradi, Meshal},
-  year={2024},
+  year={2025},
   school={Qassim University}
 }
 ```
