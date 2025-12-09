@@ -40,6 +40,7 @@ Experimental results on X-ray, CT, and MRI datasets show significant gains, achi
 medical-ssl-sr/
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
+├── LICENSE                      # MIT License
 ├── .gitignore                   # Git ignore rules
 │
 ├── app/                         # 🖥️ GUI Application
@@ -55,15 +56,27 @@ medical-ssl-sr/
 │   ├── train_baseline.py        # Phase 3: Baseline comparison
 │   └── visualize_results.py     # Inference & visualization
 │
-└── module_2_mri_super_res/      # Brain MRI Super-Resolution
+├── module_2_mri_super_res/      # Brain MRI Super-Resolution
+│   ├── README.md
+│   ├── config.py                # Centralized configuration
+│   ├── models.py                # MIRAM Generator & Discriminator
+│   ├── losses.py                # Custom loss functions
+│   ├── dataset.py               # Data loading utilities
+│   ├── train.py                 # Training loop
+│   ├── evaluate.py              # Evaluation & metrics
+│   └── enhance.py               # Single image inference
+│
+└── module_3_miram_vit/          # 🆕 ViT-MAE + Classification
     ├── README.md
     ├── config.py                # Centralized configuration
-    ├── models.py                # MIRAM Generator & Discriminator
-    ├── losses.py                # Custom loss functions
+    ├── models.py                # MIRAM ViT architecture
+    ├── losses.py                # Dual-scale patch loss
     ├── dataset.py               # Data loading utilities
-    ├── train.py                 # Training loop
-    ├── evaluate.py              # Evaluation & metrics
-    └── enhance.py               # Single image inference
+    ├── train.py                 # Self-supervised pre-training
+    ├── evaluate.py              # Reconstruction visualization
+    ├── enhance.py               # Single image inference
+    ├── classify.py              # Tumor classification + heatmaps
+    └── export_deploy.py         # ONNX export & benchmarking
 ```
 
 ### Module Descriptions
@@ -90,6 +103,14 @@ medical-ssl-sr/
 - Implements the **MIRAM Generator** with Channel & Spatial Attention
 - Optimized for **16-bit Medical TIFF** images
 - Uses advanced loss functions: **Edge Loss + Charbonnier Loss + Perceptual Loss**
+
+#### 3. `module_3_miram_vit/` 🆕
+**Focus:** ViT-MAE Self-Supervised Learning + Tumor Classification
+
+- Implements **MIRAM** (Masked Image Reconstruction Across Multiple Scales) with ViT backbone
+- **Dual-scale reconstruction**: Fine (224×224) + Coarse (112×112) targets
+- **Tumor classification** with attention heatmap visualization
+- **ONNX export** for deployment with speed benchmarking
 
 ---
 
@@ -222,7 +243,28 @@ python evaluate.py
 python enhance.py
 ```
 
-### 6. Run the GUI Application (Optional)
+### 6. Run Module 3 (ViT-MAE + Classification)
+
+```bash
+cd module_3_miram_vit
+
+# Phase 1: Self-supervised pre-training
+python train.py
+
+# Phase 2: Evaluate reconstruction
+python evaluate.py
+
+# Phase 3: Train tumor classifier with attention heatmaps
+python classify.py
+
+# Phase 4: Export to ONNX for deployment
+python export_deploy.py
+
+# Enhance a single image
+python enhance.py --input scan.tif --output restored.tif
+```
+
+### 7. Run the GUI Application (Optional)
 
 ```bash
 # From repository root
@@ -259,6 +301,17 @@ python app/app.py
 | `USE_16BIT` | True | 16-bit TIFF support |
 | `LAMBDA_EDGE` | 0.1 | Edge loss weight |
 
+### Module 3 Settings (`module_3_miram_vit/config.py`)
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `IMG_SIZE` | 224 | ViT input size |
+| `PATCH_SIZE` | 16 | Patch size (14×14 grid) |
+| `EMBED_DIM` | 384 | Encoder embedding dim |
+| `DEPTH` | 12 | Transformer blocks |
+| `MASK_RATIO` | 0.75 | Masking ratio for MAE |
+| `CLASSIFIER_EPOCHS` | 10 | Classification training |
+
 ---
 
 ## 📋 Requirements
@@ -274,7 +327,7 @@ python app/app.py
 
 If you use this code in your research, please cite:
 
-```bibtex
+```BibTeX
 @thesis{alhabib2024medical,
   title={Improving Medical Imaging With SSL Image Translation},
   author={Alhabib, Ahmed and Alseaf, Fahad and Albaradi, Meshal},
