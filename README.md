@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 This repository contains the official implementation for the Final Year Project: **Improving Medical Imaging With SSL Image Translation**.
 
@@ -43,6 +44,11 @@ medical-ssl-sr/
 ├── LICENSE                      # MIT License
 ├── .gitignore                   # Git ignore rules
 │
+├── app/                         # 🖥️ GUI Application
+│   ├── README.md                # App documentation
+│   ├── app.py                   # Tkinter GUI interface
+│   └── SR_models.py             # EnhancedMIRAM + SRGAN models
+│
 ├── module_1_general_ssl/        # X-Ray/CT Enhancement
 │   ├── README.md
 │   ├── config.py                # Centralized configuration
@@ -64,6 +70,15 @@ medical-ssl-sr/
 
 ### Module Descriptions
 
+#### 🖥️ `app/` - GUI Application
+**Focus:** Unified Interface for All Enhancement Models
+
+- **Tkinter-based GUI** for easy image enhancement
+- Supports **Model Selection**: Switch between M1 (MIRAM+SRGAN) and M2 (MRI Enhancer)
+- **Live Preview** with adjustable parameters (Sharpness, Contrast, Brightness)
+- **Batch Processing** for multiple images
+- **ViT Comparison** visualization (SSL vs Baseline)
+
 #### 1. `module_1_general_ssl/`
 **Focus:** Self-Supervised Pre-training & General Translation
 
@@ -77,6 +92,64 @@ medical-ssl-sr/
 - Implements the **MIRAM Generator** with Channel & Spatial Attention
 - Optimized for **16-bit Medical TIFF** images
 - Uses advanced loss functions: **Edge Loss + Charbonnier Loss + Perceptual Loss**
+
+---
+
+## 🖥️ GUI Application
+
+The repository includes a **Tkinter-based GUI** that provides a unified interface for all enhancement models.
+
+### Features
+
+| Feature | Description |
+|---------|-------------|
+| **Model Selection** | Switch between M1 (MIRAM+SRGAN) and M2 (MRI Enhancer) |
+| **Live Preview** | Real-time enhancement preview with adjustable parameters |
+| **Batch Processing** | Enhance multiple images at once |
+| **Parameter Sliders** | Adjust Sharpness, Contrast, Brightness |
+| **ViT Comparison** | Visualize SSL vs Baseline results |
+
+### Quick Start (GUI)
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+python app/app.py
+```
+
+### Screenshot
+
+```
+┌──────────────────────────────────────────────────────────┐
+│          AI Medical Image Enhancement Tool               │
+├──────────────────────────────────────────────────────────┤
+│  [M1: MIRAM+SRGAN]    [M2: MRI Enhancer]                │
+│  Model: EnhancedMIRAM + SRGAN (M1)                      │
+├──────────────────────────────────────────────────────────┤
+│  [Select Images]      [Select Output Folder]             │
+│  Output: /path/to/output                                 │
+├──────────────────────────────────────────────────────────┤
+│  ┌────────────────────────────────────────────────────┐ │
+│  │  image1.png                                         │ │
+│  │  image2.tif                                         │ │
+│  │  image3.jpg                                         │ │
+│  └────────────────────────────────────────────────────┘ │
+│  [Select Preview Example]                                │
+├──────────────────────────────────────────────────────────┤
+│  Sharpness    [════════●═══════════] 1.0                │
+│  Contrast     [════════●═══════════] 1.0                │
+│  Brightness   [════════●═══════════] 1.0                │
+│  Preview Size [════════●═══════════] 1.0×               │
+│              [Reset to Default]                          │
+├──────────────────────────────────────────────────────────┤
+│         [      Start Enhancement      ]                  │
+│         [ Visualize ViT Results ]                        │
+└──────────────────────────────────────────────────────────┘
+```
+
+See [`app/README.md`](app/README.md) for detailed usage instructions.
 
 ---
 
@@ -151,6 +224,18 @@ python evaluate.py
 python enhance.py
 ```
 
+### 6. Run the GUI Application (Optional)
+
+```bash
+# From repository root
+python app/app.py
+
+# Required model files (place in app/ directory):
+# - SR_best.pth (EnhancedMIRAM weights)
+# - srgan_best.pth (EnhancedGenerator weights)
+# - mri_enhancer_best.pth (MRI Generator weights)
+```
+
 ---
 
 ## ⚙️ Configuration
@@ -187,18 +272,21 @@ python enhance.py
 
 ---
 
-## 📜 BibTeX
+## 📜 Citation
 
 If you use this code in your research, please cite:
 
 ```bibtex
-@thesis{Quni2025medical,
+@thesis{alhabib2024medical,
   title={Improving Medical Imaging With SSL Image Translation},
   author={Alhabib, Ahmed and Alseaf, Fahad and Albaradi, Meshal},
-  year={2025},
+  year={2024},
   school={Qassim University}
 }
 ```
+
+---
+
 ---
 
 ## 🙏 Acknowledgments
