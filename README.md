@@ -40,7 +40,6 @@ Experimental results on X-ray, CT, and MRI datasets show significant gains, achi
 medical-ssl-sr/
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
-├── LICENSE                      # MIT License
 ├── .gitignore                   # Git ignore rules
 │
 ├── app/                         # 🖥️ GUI Application
