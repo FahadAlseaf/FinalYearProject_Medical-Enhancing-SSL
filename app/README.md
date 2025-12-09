@@ -17,7 +17,6 @@ This folder contains a **Tkinter-based GUI application** that provides a unified
 ```
 app/
 ├── app.py          # Main GUI application (Tkinter)
-├── SR_models.py    # EnhancedMIRAM + EnhancedGenerator models
 └── README.md       # This file
 ```
 
