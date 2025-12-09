@@ -1,0 +1,124 @@
+# ===================
+# Python
+# ===================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===================
+# PyTorch / ML Models
+# ===================
+*.pth
+*.pt
+*.onnx
+*.pkl
+*.h5
+checkpoints/
+saved_models/
+
+# ===================
+# Data & Outputs
+# ===================
+data/
+datasets/
+medical_images_dataset/
+Brain_MRI/
+outputs/
+results/
+logs/
+runs/
+
+# Medical Images (to prevent accidental upload)
+*.tif
+*.tiff
+*.dcm
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+*.raw
+
+# General Images (uncomment if needed)
+# *.png
+# *.jpg
+# *.jpeg
+
+# ===================
+# Jupyter Notebooks
+# ===================
+.ipynb_checkpoints/
+*.ipynb
+
+# ===================
+# Environment
+# ===================
+.env
+.venv/
+venv/
+ENV/
+env/
+.conda/
+*.env
+
+# ===================
+# IDE & Editors
+# ===================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ===================
+# OS Generated
+# ===================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===================
+# Kaggle / Colab
+# ===================
+/kaggle/
+*.kaggle/
+
+# ===================
+# TensorBoard
+# ===================
+tensorboard_logs/
+tb_logs/
+lightning_logs/
+
+# ===================
+# Misc
+# ===================
+*.log
+*.tmp
+*.temp
+*.bak
+.cache/

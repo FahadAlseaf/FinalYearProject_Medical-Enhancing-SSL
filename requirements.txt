@@ -1,0 +1,19 @@
+# Core Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+timm>=0.9.0
+
+# Data Processing
+numpy>=1.24.0
+pillow>=10.0.0
+tifffile>=2023.7.0
+scikit-image>=0.21.0
+
+# Training Utilities
+tqdm>=4.65.0
+tensorboard>=2.14.0
+matplotlib>=3.7.0
+
+# Optional: For Jupyter Notebooks
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0
