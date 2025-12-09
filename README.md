@@ -188,7 +188,7 @@ python enhance.py
 
 ---
 
-## 📜 Citation
+## 📜 BibTeX
 
 If you use this code in your research, please cite:
 
