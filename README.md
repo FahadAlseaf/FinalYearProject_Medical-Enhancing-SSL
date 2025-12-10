@@ -152,10 +152,10 @@ This project uses publicly available medical imaging datasets:
 
 | Dataset | Modality | Source |
 |---------|----------|--------|
-| NIH Chest X-ray (NIHCC) | X-ray | [NIH](https://nihcc.app.box.com/v/ChestXray-NIHCC) |
-| BraTS MRI | MRI | [Kaggle](https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation) |
-| Brain MRI | MRI | [Kaggle](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection) |
-| CheXpert | X-ray | [Stanford](https://stanfordmlgroup.github.io/competitions/chexpert/) |
+| Chest| X-ray | [NIH](https://nihcc.app.box.com/v/ChestXray-NIHCC) |
+| Brain | MRI | [Kaggle](https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation) |
+| Brain | MRI | [Kaggle](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection) |
+| Chest | X-ray | [Stanford](https://stanfordmlgroup.github.io/competitions/chexpert/) |
 
 ## 📖 BibTeX
 
