@@ -5,20 +5,6 @@
 
 A comprehensive deep learning framework for enhancing medical images using **Self-Supervised Learning (SSL)**, **Vision Transformers (ViT)**, and **Generative Adversarial Networks (GANs)**. This project addresses the critical challenge of improving diagnostic accuracy in medical imaging while reducing dependence on expensive labeled datasets.
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Modules](#modules)
-- [Results](#results)
-- [Datasets](#datasets)
-- [Citation](#citation)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
-
 ## 🔬 Overview
 
 Medical imaging plays a central role in modern healthcare, enabling accurate diagnosis, treatment planning, and patient monitoring. However, image quality is often compromised by:
