@@ -116,35 +116,6 @@ drive.mount('/content/drive')
 !pip install -r requirements.txt
 ```
 
-## 🚀 Quick Start
-
-### 1. Pretraining with Self-Supervised Learning
-
-```bash
-cd module_1_general_ssl
-python pretrain.py
-```
-
-### 2. Train Super-Resolution Model
-
-```bash
-python train.py
-```
-
-### 3. Enhance Medical Images
-
-```bash
-cd module_3_miram_vit
-python enhance.py
-```
-
-### 4. Run Desktop Application
-
-```bash
-cd app
-python app.py
-```
-
 ## 📦 Modules
 
 | Module | Description | Key Features |
@@ -186,12 +157,12 @@ This project uses publicly available medical imaging datasets:
 | Brain MRI | MRI | [Kaggle](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection) |
 | CheXpert | X-ray | [Stanford](https://stanfordmlgroup.github.io/competitions/chexpert/) |
 
-## 📖 Citation
+## 📖 BibTeX
 
 If you use this work in your research, please cite:
 
 ```bibtex
-@thesis{alhabib2025medical,
+@thesis{Quni2025medical,
   title={Improving Medical Imaging with Self-Supervised Image Translation},
   author={Alhabib, Ahmed and Alseaf, Fahad and Albaradi, Meshal},
   school={Qassim University},
@@ -203,11 +174,11 @@ If you use this work in your research, please cite:
 
 ## 👥 Contributors
 
-| Name | Student ID | Role |
-|------|------------|------|
-| Ahmed Alhabib | 421108088 | Developer |
-| Fahad Alseaf | 421109643 | Developer |
-| Meshal Albaradi | 421108059 | Developer |
+| Name |
+|------|
+| Ahmed Alhabib
+| Fahad Alseaf
+| Meshal Albaradi
 
 **Supervisor**: Dr. Mohmmad Ali A. Hammoudeh
 
@@ -216,11 +187,6 @@ If you use this work in your research, please cite:
 - Qassim University, College of Computer, Information Technology Department
 - The developers of PyTorch, timm, and the open-source community
 - NIH and Kaggle for providing publicly available medical imaging datasets
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 <p align="center">
